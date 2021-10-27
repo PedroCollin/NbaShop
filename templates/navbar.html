@@ -1,12 +1,9 @@
-<nav class="navbar navbar-light bg-light fixed-top">
-  
-  
-    
-<div class="d-flex">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" >Collinfutz</a>
+<nav class=" navbar-light bg-dark fixed-top">
+<div class="d-flex" >
+      <div class="container-fluid" style="display: flex;justify-content: space-between !important; padding: 10px 20px 10px 20px">
+        <a class="navbar-brand text-white" href="{% url 'home' %}">Mlk Store</a>
       {% if user.is_authenticated %}
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -24,15 +21,10 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
+                      Logout
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                      <li><a class="dropdown-item" href="#">Mais</a></li>
-                      <li><a class="dropdown-item" href="#">Quem Somos</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="#">Contato</a></li>
+                      <li><a class="dropdown-item" href="{% url 'logout' %}">Sair agora</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -44,7 +36,10 @@
             </div>
           </div>
       {% else %}
-        <a class="btn btn-warning" href="#" style="padding: 10px 20px 10px 20px">Login</a>
+      <div>
+        <a class="btn btn-outline-primary" href="{% url 'login' %}" style="padding: 10px 20px 10px 20px">Log in</a>
+        <a class="btn btn-primary" href="{% url 'cadastro' %}" style="padding: 10px 20px 10px 20px">Sig in</a>
+      </div>
       {% endif %}
 </div>
   

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'usuarios.apps.UsuariosConfig'
     
 ]
 
@@ -133,3 +134,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.INFO:'alert-info',
+    constants.ERROR:'alert-danger',
+    constants.SUCCESS:'alert-success'
+}
